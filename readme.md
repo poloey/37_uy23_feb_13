@@ -85,7 +85,15 @@ $faker = Factory::create();
 ## Carbon date library   
 
 Carbon date library has lot of helper function to work with data       
-Installing Carbon
+
+Installing  Carbon      
+
+~~~php
+composer require nesbot/carbon
+~~~
+
+Using carbon     
+
 ~~~php
 use Carbon\Carbon
 Carbon::now()->format("Y-m-d H:i:s")
