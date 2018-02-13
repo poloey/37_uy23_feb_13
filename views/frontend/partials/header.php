@@ -22,5 +22,24 @@
         <a class="nav-link" href="/about">About</a>
       </li>
     </ul>
+    <ul class="navbar-nav">
+      <?php if(!is_authenticate()): ?>
+      <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+    <?php else: ?>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <?php echo  $_SESSION['user']->name ?>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/logout">Logout</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/dashboard/home">Dashboard</a>
+      </li>
+    <?php endif; ?>
+    </ul>
   </div>
 </nav>
