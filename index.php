@@ -17,9 +17,28 @@ session_start();
 
   //authenticate user
   'logout' => 'views/frontend/logout.php',
+  'dashboard/post' => 'views/dashboard/post_read.php',
+  'dashboard/post/create' => 'views/dashboard/post_create.php',
+  'dashboard/post/update' => 'views/dashboard/post_update.php',
+  'dashboard/post/delete' => 'views/dashboard/post_delete.php',
+  'dashboard/category' => 'views/dashboard/category_read.php',
+  'dashboard/category/create' => 'views/dashboard/category_create.php',
+  'dashboard/category/update' => 'views/dashboard/category_update.php',
+  'dashboard/category/delete' => 'views/dashboard/category_delete.php',
  ];
- $guest_routes = ['login', 'register'];
- $auth_routes = ['logout'];
+
+$guest_routes = ['login', 'register'];
+ $auth_routes = [
+  'logout',
+  'dashboard/post',
+  'dashboard/post/create',
+  'dashboard/post/update',
+  'dashboard/post/delete',
+  'dashboard/category',
+  'dashboard/category/create',
+  'dashboard/category/update',
+  'dashboard/category/delete'
+];
 
  if (array_key_exists($path, $routes)) {
   if (in_array($path, $auth_routes)) {
