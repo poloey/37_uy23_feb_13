@@ -1,7 +1,7 @@
   
   <div class="bg-dark text-light py-5 text-center">
     <div class="container">
-      &copy; All rights reserved feni blog - <?php echo date('Y'); ?>
+      &copy; All rights reserved feni college journal - <?php echo date('Y'); ?>
     </div>
   </div>
   <script src="/assets/jquery.js"></script>
