@@ -17,11 +17,26 @@ session_start();
 
   //authenticate user
   'logout' => 'views/frontend/logout.php',
-
  ];
+ $guest_routes = ['login', 'register'];
+ $auth_routes = ['logout'];
 
  if (array_key_exists($path, $routes)) {
-  require $routes[$path] ;
+  if (in_array($path, $auth_routes)) {
+    if (is_authenticate()) {
+      require $routes[$path] ;
+    } else {
+      header('Location: /login');
+    }
+  } else if (in_array($path, $guest_routes)) {
+    if (is_authenticate()) {
+      header('Location: /');
+    } else {
+      require $routes[$path] ;
+    }
+  } else {
+    require $routes[$path] ;
+  }
  }else {
   require 'views/frontend/notfound.php';
  }
